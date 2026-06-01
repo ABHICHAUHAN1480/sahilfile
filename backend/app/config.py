@@ -10,7 +10,11 @@ class Settings(BaseSettings):
         default="postgresql+psycopg://inventory_user:inventory_password@localhost:5432/inventory_db",
         validation_alias="DATABASE_URL",
     )
-    backend_cors_origins: str = Field(default="http://localhost:5173", validation_alias="BACKEND_CORS_ORIGINS")
+    backend_cors_origins: str = Field(
+        default="http://localhost:5173,http://localhost:3000",
+        validation_alias="BACKEND_CORS_ORIGINS",
+    )
+    backend_cors_origin_regex: str | None = Field(default=None, validation_alias="BACKEND_CORS_ORIGIN_REGEX")
 
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
@@ -25,7 +29,12 @@ class Settings(BaseSettings):
 
     @property
     def cors_origins(self) -> list[str]:
-        return [origin.strip() for origin in self.backend_cors_origins.split(",") if origin.strip()]
+        origins = []
+        for origin in self.backend_cors_origins.split(","):
+            normalized_origin = origin.strip().rstrip("/")
+            if normalized_origin:
+                origins.append(normalized_origin)
+        return origins
 
 
 @lru_cache
