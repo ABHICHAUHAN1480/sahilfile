@@ -1,0 +1,19 @@
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Node
+node_modules/
+dist/
+.vite/
+npm-debug.log*
+
+# Local tooling
+.DS_Store
+.idea/
+.vscode/
