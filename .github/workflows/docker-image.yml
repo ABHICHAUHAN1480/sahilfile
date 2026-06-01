@@ -25,4 +25,4 @@ jobs:
         with:
           context: ./backend
           push: true
-          tags: abhi9953/inventory:latest
+          tags: sahil9588/inventory:latest
