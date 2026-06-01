@@ -2,6 +2,13 @@
 
 Full-stack technical assessment project for managing products, customers, orders, and stock movement.
 
+## Live Links
+
+- Frontend: https://sahilfile.vercel.app/
+- Backend API: https://sahilfile-chgc.onrender.com
+- Backend Health Check: https://sahilfile-chgc.onrender.com/health
+- API Docs: https://sahilfile-chgc.onrender.com/docs
+
 ## Stack
 
 - Frontend: React, Vite, JavaScript
@@ -164,7 +171,7 @@ docker push your-dockerhub-username/inventory-backend:latest
 
 ## Submission Checklist
 
-- GitHub repository link: add after pushing this repository
+- GitHub repository link: https://github.com/ABHICHAUHAN1480/sahilfile
 - Docker Hub backend image link: add after pushing the backend image
-- Live frontend deployment URL: add after Vercel/Netlify deployment
-- Live backend API URL: add after Render/Railway/Fly.io deployment
+- Live frontend deployment URL: https://sahilfile.vercel.app/
+- Live backend API URL: https://sahilfile-chgc.onrender.com
